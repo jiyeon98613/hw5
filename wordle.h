@@ -3,6 +3,8 @@
 
 #include <set>
 #include <string>
+#include <vector>
+#include <map>
 
 /**
  * @brief Returns the list of all legal words in the provided dictionary
@@ -20,4 +22,13 @@ std::set<std::string> wordle(
     const std::string& floating,
     const std::set<std::string>& dict);
 
+std::set<std::string>* wordle_helper(
+    const std::string&input, 
+    std::vector<char>&yellow, 
+    std::map<char, std::string> green, 
+    std::vector<char>& repeated,
+    int current, 
+    int greenCounter,
+    bool first,
+    std::set<std::string>* answer);
 #endif
